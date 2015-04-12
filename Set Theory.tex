@@ -1,0 +1,185 @@
+\documentclass[xcolor=svgnames]{beamer}
+
+\usepackage[utf8]    {inputenc}
+\usepackage[T1]      {fontenc}
+\usepackage[english] {babel}
+
+\usepackage{amsmath,amsfonts,graphicx}
+\usepackage{beamerleanprogress}
+
+
+\title
+  [Set Theory\hspace{2em}]
+  {Set Theory}
+
+\subtitle
+  {The Implicit Foundation of Mathematics}
+
+\author
+  [Jack Gallagher]
+  {Jack Gallagher}   
+
+\date{April 2, 2015}
+
+\institute{Mentoring Academy}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{frame}{}
+  \begin{center}
+  \Huge Why do we need foundations?
+  \end{center}
+\end{frame}
+
+\begin{frame}{}
+    I'd contend there are three real reasons:
+    \begin{enumerate}
+    \item Unambiguity
+    \item Checkability
+    \item Automation?
+    \end{enumerate}
+\end{frame}
+
+\section{Sets}
+
+\begin{frame}{Sets}
+
+    Sets are \emph{collections of objects}
+
+    \begin{itemize}
+    \item $\{1,2,3\}$
+    \item $\{1,2,\frac{1}{2}\}$
+    \item $(1,10)$, $[1,10]$
+    \end{itemize} \pause
+
+    Sets can also contain other sets
+    
+    \begin{itemize}
+    \item $\{1,2,\{1\}\}$
+    \item $\{1,\{\}\}$
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Basic Properties of Sets}
+
+    Unordered
+        \begin{itemize}
+        \item $\{1,2\} = \{2,1\}$
+        \end{itemize} \pause
+    Unique
+        \begin{itemize}
+        \item $\{1,1\}$ isn't a set, it's just $\{1\}$
+        \end{itemize} \pause
+    Testable
+        \begin{itemize}
+        \item $1 \in \{1,2,3\}$
+        \item $1 \notin \{2,3,4\}$
+        \end{itemize} \pause
+
+
+\end{frame}
+
+\begin{frame}{Set Builder Notation}
+    
+    Another way of specifying sets
+    \begin{itemize}
+    \item $\{x\ |\ x < 3\} = (-\infty,3)$ 
+    \item $\{x\ |\ x^2 = 1\} = \{-1,1\}$
+    \item $\{x\ |\ x \in (-1,1),\ x + 1 = 0\} = \{\}$
+    \end{itemize}
+
+\end{frame}
+
+\section{Oops!}
+
+\begin{frame}{}
+    \begin{center}
+    \Huge Paradox alert!
+    \end{center}
+\end{frame}
+
+\begin{frame}{Russel's Paradox}
+    $$\text{Let } A = \{x\ |\ x \notin x\}$$
+    The question is, is $A$ contained in $A$?
+    $$A \in A \implies A \notin A$$ \pause
+    $$A \notin A \implies A \in A$$ \pause
+
+    Either way, we have a paradox!
+    \pause
+    
+    Beginning of the ``crisis of foundations''
+\end{frame}
+
+\begin{frame}{How to fix this?}
+    Several patching methods
+    
+    Most successful has been to weaken comprehension
+    \pause
+    
+    $\{x\ |\ x \notin x\}$ is no longer a set,
+    but $\{x\ |\ x \in A, x \notin x\}$ for some set $A$ is. \pause
+
+\end{frame}
+
+\begin{frame}{Lessons from the paradox}
+    \begin{itemize}
+    \item Our naive idea of a set was too broad, needed more formality
+    \item Big motivator for foundations
+    \item What's the smallest possible set of axioms that captures all of math?
+
+    \end{itemize}
+\end{frame}
+
+\section{Number theory}
+
+\begin{frame}{}
+    \begin{center}
+    \Huge Encoding number theory
+    \end{center}
+\end{frame}
+
+\begin{frame}{Some operations on sets}
+    Set union \pause
+    \begin{itemize}
+    \item $\{1,2\} \cup \{2,3\} = \{1,2,3\}$
+    \item $\{\} \cup X = X \cup \{\} = X$ \pause
+    \item $\{x\ |\ P(x)\} \cup \{x\ |\ Q(x)\} = \{x\ |\ P(x) \text{ or } Q(x)\}$
+    \end{itemize} \pause
+    
+    Set intersection \pause
+    \begin{itemize}
+    \item $\{1,2\} \cap \{2,3\} = \{2\}$
+    \item $\{\} \cap X = X \cap \{\} = \{\}$ \pause
+    \item $\{x\ |\ P(x)\} \cap \{x\ |\ Q(x)\} = \{x\ |\ P(x) \text{ and } Q(x)\}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Encoding number theory}
+    Natural numbers
+    \begin{itemize}
+    \item $0 = \{\}$
+    \item $\sigma(n) = n \cup \{n\}$
+    \item $1 = \{0\} = \{\{\}\}$
+    \item $2 = \{0,1\} = \{\{\}, \{\{\}\}\}$ \dots
+    \end{itemize}
+
+    Addition
+    \begin{itemize}
+    \item $A + B = \sigma^{|A|}(B)$
+    \end{itemize}
+    
+    Multiplication then gets the familiar definition, as does exponentiation
+\end{frame}
+
+\begin{frame}{Encoding number theory?}
+    \begin{center}
+    \Huge Does this definition capture all of number theory?
+    \end{center}
+\end{frame}
+
+\end{document}
