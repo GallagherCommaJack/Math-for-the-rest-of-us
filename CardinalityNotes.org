@@ -1,0 +1,44 @@
+# Is a subset smaller than the whole
+  - Draw some smaller sets on the board
+    - Subsets seem to be smaller...
+  - But what about even numbers?
+    -
+# Pidgeons and Hotels
+  - Pidgeonhole principle
+    - Can't fit 1+n pidgeons into n holes without sharing
+    - Draw it a few times?
+  - Breaks down in infinite case
+    - Consider a hotel with a neverending hallway
+      - Rooms are all occupied
+    - New tennant shows up
+      - What to do?
+      - Move everyone over one, it's all good
+      - Always another room to go to - it's infinite
+    - Several (n) new tennants show up
+      - Move everyone over n rooms
+    - Another infinite number of guests appears!
+      - How would we solve this problem?
+      - Move everyone in room (n) to room (2n)
+      - Assign each new guest a number, tell them to go to room 2n+1
+      - No collisions, rooms for everyone
+    - Our problems have gotten worse...
+      - An infinite number of busses appear
+      - They all contain infinitely many guests
+      - What are we to do?
+        - Give each bus a number (i)
+        - Each guest has a number within their bus (j)
+        - Think of them as in a grid of all (i,j)
+        - Winding map to numbers
+# Consequences for sizing infinite sets
+  - Clearly these sets are in some sense the same size
+  - After all, they both "fit" inside the elements of the other
+# Countabillity?
+  - Can we count every set?
+    - Don't worry, I'm not going to pull another paradox
+  - Integers?
+    - Make them guess
+  - The rationals (fractions)?
+    - Make them guess
+      - Turns out to be easier than the infinite bus scenario
+  - The reals?
+    - Hmm...
